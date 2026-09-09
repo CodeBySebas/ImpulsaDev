@@ -317,6 +317,35 @@ h2 {
     margin-top: 2px;
 }
 
+.process-inner{
+    margin-top: 36px;
+    display: grid;
+    gap: 40px;
+    align-items: center;
+}
+
+@media (min-width: 800px) {
+    .process-inner {
+        grid-template-columns: 1.1fr 1fr;
+    }
+}
+
+.process-line {
+    margin-top: 0;
+}
+
+.process-art {
+    display: none;
+}
+
+@media (min-width: 800px) {
+    .process-art {
+        display: block;
+        width: 220px;
+        margin-left: auto;
+    }
+}
+
 .process {
     max-width: 980px;
     margin: 0 auto;
@@ -573,7 +602,7 @@ footer .btn{
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .bar.arrow{
+    .bar, .arrow{
         animation: none
         !important; 
         opacity: 1
@@ -582,4 +611,77 @@ footer .btn{
         !important;
 
     }       
+}
+
+.flow-connector {
+  stroke: var(--line);
+  stroke-width: 2;
+  fill: none;
+}
+
+.flow-arrowhead {
+  fill: var(--line);
+}
+
+.flow-shape,
+.flow-diamond {
+  stroke: var(--muted);
+  stroke-width: 2;
+  fill: #fff;
+  animation: pulse-stroke 5s ease-in-out infinite;
+}
+
+.flow-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  fill: var(--ink);
+  text-anchor: middle;
+  dominant-baseline: middle;
+}
+
+.flow-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  fill: var(--muted);
+}
+
+@keyframes pulse-stroke {
+  0%, 80%, 100% { stroke: var(--muted); }
+  40% { stroke: var(--lime-dark); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .flow-shape, .flow-diamond {
+    animation: none;
+  }
+}
+
+.process-art svg {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.loop-track {
+    stroke: var(--line);
+}
+
+.loop-node {
+    fill: #D4D4D0;
+}
+
+.loop-dot {
+    fill: var(--lime);
+}
+
+@keyframes travel {
+    from { offset-distance: 0%;}
+    to { offset-distance: 100%;}
+}
+
+@media (prefer-reduced-motion: reduce) {
+    .loop-dot {
+        animation: none;
+        offset-distance: 0%;
+    }
 }
