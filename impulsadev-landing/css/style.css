@@ -348,7 +348,7 @@ h2 {
     padding-bottom: 0;
 }
 
-step::before {
+.step::before {
     content: "";
     position: absolute;
     left: -36px;
@@ -366,7 +366,7 @@ step::before {
     font-weight: 500;
 }
 
-step h3 {
+.step h3 {
     font-family: "Space Grotesk", sans-serif;
     font-weight: 500;
     font-size: 1.1rem;
@@ -391,7 +391,7 @@ step h3 {
     transform: none;
 }
 
-.portofolio {
+.portfolio {
     max-width: 980px;
     margin: 0 auto;
     padding: 64px 24px;
@@ -412,7 +412,7 @@ step h3 {
     align-items: center;
     gap: 6px;
     padding: 12px 16px;
-    border-bottom: 1px solid var (--line);
+    border-bottom: 1px solid var(--line);
     background: #FCFCFB;
 }
 
@@ -443,7 +443,7 @@ step h3 {
     }
 }
 
-.browser-body {
+.browser-body h3 {
     font-family: "Space Grotesk", sans-serif;
     font-weight: 500;
     font-size: 1.25rem;
@@ -527,9 +527,10 @@ footer .btn{
 .foot-brand{
     margin-top: 56px;
     padding-top: 28px;
-    border-top: 1px solid rgba (255, 255, 255, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 8px;
     color: #8A8A84;
     font-size: 0.88rem;
@@ -538,4 +539,47 @@ footer .btn{
 .foot-brand .name {
     color: #D4D4D0;
     font-family: "Space Grotesk", sans-serif;
+}
+
+.bar {
+    transform-origin: bottom;
+    transform: scaleY(0);
+}
+
+.bar.rise {
+    animation: rise 0.7s cubic-bezier(.2, .8, .2, 1) forwards;
+}
+
+.arrow {
+    stroke-dasharray: 140;
+    stroke-dashoffset: 140;
+    opacity: 0;
+}
+
+.arrow.draw {
+    animation: draw 0.9s ease-out forwards;
+}
+
+@keyframes rise {
+    to {     transform: scaleY(1);
+    }
+}
+
+@keyframes draw {
+    to {
+        stroke-dashoffset: 0;
+        opacity: 1;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .bar.arrow{
+        animation: none
+        !important; 
+        opacity: 1
+        !important;
+        transform: none
+        !important;
+
+    }       
 }
