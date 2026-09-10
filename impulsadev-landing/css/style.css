@@ -748,3 +748,47 @@ footer .btn{
     }
 }
 
+.marquee {
+    background: var(--lime);
+    overflow: hidden;
+    padding: 18px 0;
+    white-space: nowrap;
+}
+
+.marquee-track {
+    display: inline-flex;
+    align-items: center;
+    gap: 20px;
+    animation: scroll-left 22s linear infinite;
+}
+
+.marquee-track span {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--ink)
+}
+
+.marquee-track .dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--ink);
+    opacity: 0.5;
+    flex-shrink: 0;
+}
+
+@keyframes scroll-left {
+    from{
+     transform: translateX(0);
+    }
+    to {
+         transform: translateX(-50%);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .marquee-track {
+        animation: none;
+    }
+}
