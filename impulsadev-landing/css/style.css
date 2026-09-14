@@ -81,6 +81,28 @@ header {
     justify-content: space-between;
 }
 
+.nav-links  {
+    display: none;
+    gap: 28px;
+}
+
+.nav-links a {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--muted);
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: var(--ink);
+}
+
+@media (min-width: 800px) {
+    .nav-links {
+        display: flex;
+    }
+}
+
 .brand {
     display: flex;
     align-items: center;
