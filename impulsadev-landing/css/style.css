@@ -792,3 +792,24 @@ footer .btn{
         animation: none;
     }
 }
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--lime);
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+  z-index: 40;
+  transition: transform 0.2s ease;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.08);
+}

@@ -8,6 +8,7 @@ document.getElementById("nav-cta").href = waLink("Hola, quiero saber más sobre 
 document.getElementById("hero-cta").href = waLink("Hola, quiero probar el sistema de ImpulsaDev para mi negocio");
 document.getElementById("offer-cta").href = waLink("Hola, quiero empezar mi prueba de 30 días con ImpulsaDev");
 document.getElementById("footer-cta").href = waLink("Hola, quiero información sobre ImpulsaDev");
+document.getElementById("floating-cta").href = waLink("Hola, quiero saber más sobre ImpulsaDev");
 
 const bars = document.querySelectorAll(".bar");
 const arrows = document.querySelectorAll(".arrow");
